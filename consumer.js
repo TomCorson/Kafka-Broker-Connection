@@ -17,12 +17,19 @@ async function run(){
             "topic":"Users",
             "fromBeginning":true
         })
+        console.log("subscribed");
        await consumer.run({
-           "eachMessage": async result => {console.log(`RVD MSG ${result.message.value} on partition ${result.partition}`)}
+           "eachMessage": async result => {
+               console.log(`RVD MSG ${result.message.value} on partition ${result.partition}`);
+            }
        })
+       console.log("done");
     }
     catch(ex){
         console.error("bad things happened");
+    }
+    finally{
+
     }
   
 }

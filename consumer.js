@@ -20,7 +20,7 @@ async function run(){
         console.log("subscribed");
        await consumer.run({
            "eachMessage": async result => {
-               console.log(`RVD MSG ${result.message.value} on partition ${result.partition}`);
+               console.log(`RVD MSG ${result.message.value} on partition ${result.partition}`)
             }
        })
        console.log("done");
